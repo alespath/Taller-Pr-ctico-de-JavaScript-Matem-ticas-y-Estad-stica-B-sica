@@ -6,10 +6,18 @@ function esPar(lista) {
   }
 
   function calcularMediana(lista) {
-    const listaesPar = esPar(lista);
+    const listaEsPar = esPar(lista);
 
-    if (listaesPar) {
-      //...
+    if (listaEsPar) {
+      const indexMitad1ListaPar = (lista.length / 2) - 1;
+      const indexMitad2ListaPar = lista.length / 2;
+
+      const listaMitades = [];
+      listaMitades.push(lista[indexMitad1ListaPar]);
+      listaMitades.push(lista[indexMitad2ListaPar]);
+
+      const medianaListaPar = calcularPromedio(listaMitades);
+      return medianaListaPar;
     } else {
       const indexMitadListaImpar = Math.floor(lista.length / 2);
       const medianaListaImpar = lista[indexMitadListaImpar];
@@ -26,6 +34,6 @@ function calcularPromedio(lista) {
   
   const sumaLista = lista.reduce(sumarTodosElementos);
   const promedio = sumaLista / lista.length;
-  console.log(promedio);
+  // console.log(promedio);
   return promedio;
 }
